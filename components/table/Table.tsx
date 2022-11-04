@@ -267,6 +267,10 @@ function InternalTable<RecordType extends object = any>(
     });
   };
 
+   React.useEffect(function () {
+    triggerOnChange({}, 'dataSource', false);
+  }, [rawData]);
+
   /**
    * Controlled state in `columns` is not a good idea that makes too many code (1000+ line?) to read
    * state out and then put it back to title render. Move these code into `hooks` but still too
